@@ -31,9 +31,15 @@ mymap.on('click', onMapClick);
 				var Lat=document.getElementById("Lat").value;
 				var Lng=document.getElementById("Lng").value;
 				var Name=document.getElementById("Name").value;
-				var Type=document.getElementById("Type").value;
+                var Type=document.getElementById("Type").value;
+                var room=document.getElementById("room").value;
+                var Other=document.getElementById("Other").value;
+                var date=document.getElementById("date").value;
+                var contact=document.getElementById("contact").value;
+
+                alert("Please see you submission in map");
 				
-				if (Lat == 5) {
+				/*if (Lat == 5) {
 						
 						alert("Well done! You got it!");
 						
@@ -41,9 +47,21 @@ mymap.on('click', onMapClick);
 						
 						alert("Nope! The number was " + Name + Lat + Lng );
 						
-					} 
+                    } 
+                    */
+
 					L.marker([Lat,Lng]).addTo(mymap)
-					.bindPopup("This is a "+ Type);
+                    .bindPopup(
+                        "This is a "+ Type+ "<br />"+
+                         "Address Provided: " + Name + "<br />" +
+                        "There are " + room + " rooms availabe <br />"+ 
+                        "Date ready to move in "+ date + "<br />" +
+                        "Contact " + contact + "<br />" +
+                        "Comments " + Other
+                        
+
+                );
+                    
 			
 			};
 			
